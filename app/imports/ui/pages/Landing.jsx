@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Image, Card, CardContent, CardHeader, CardDescription } from 'semantic-ui-react';
+import { Grid, Image, Card, CardContent, CardHeader, CardDescription, GridRow, Header, Input, Button } from 'semantic-ui-react';
 
 /** A simple static component to render some text for the landing page. */
 class Landing extends React.Component {
@@ -15,76 +15,28 @@ class Landing extends React.Component {
         <Grid.Column width={8}>
           <Card>
             <CardContent>
-              <CardHeader>Mai Taiʻs</CardHeader>
-              <CardDescription>
-                Live music, cheap beers, and tasty food!
-              </CardDescription>
-            </CardContent>
-          </Card>
+              <Image circular src="/images/dandakine.jpg"/>
 
-          <Card>
-            <CardContent>
-              <CardHeader>Da Spot</CardHeader>
-              <CardDescription>
-                Live music, cheap beers, and tasty food!
-              </CardDescription>
-            </CardContent>
-          </Card>
-          
-          <Card>
-            <CardContent>
-              <CardHeader>Appetito</CardHeader>
-              <CardDescription>
-                Live music, cheap beers, and tasty food!
-              </CardDescription>
-            </CardContent>
-          </Card>
+              <GridRow>
+                <Header textAlign='left'>Name</Header>
+                <Input verticalAlign='left' foucs placeholder='name'/> <Button>Submit</Button>
 
-          <Card>
-            <CardContent>
-              <CardHeader>La Pina</CardHeader>
-              <CardDescription>
-                Live music, cheap beers, and tasty food!
-              </CardDescription>
+              </GridRow>
+             
+              <GridRow>
+                <Header textAlign='left'>Number</Header>
+                <Input verticalAlign='left' foucs placeholder='(808)555-5555'/> <Button>Submit</Button>
+              </GridRow>
+             
+              <GridRow>
+                <Header textAlign='left'>Change Password</Header>
+                <Input verticalAlign='left' foucs placeholder='current password'/>
+                <Input verticalAlign='left' foucs placeholder='new password'/>
+                <Input verticalAlign='left' foucs placeholder='confirm password'/> <Button>Submit</Button>
+              </GridRow>
+
             </CardContent>
           </Card>
-
-          <Card>
-            <CardContent>
-              <CardHeader>Shore Fyre</CardHeader>
-              <CardDescription>
-                Live music, cheap beers, and tasty food!
-              </CardDescription>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardContent>
-              <CardHeader>Maui Brewing Co.</CardHeader>
-              <CardDescription>
-                Live music, cheap beers, and tasty food!
-              </CardDescription>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardContent>
-              <CardHeader>Deck</CardHeader>
-              <CardDescription>
-                Live music, cheap beers, and tasty food!
-              </CardDescription>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardContent>
-              <CardHeader>Basalt</CardHeader>
-              <CardDescription>
-                Live music, cheap beers, and tasty food!
-              </CardDescription>
-            </CardContent>
-          </Card>
-
         </Grid.Column>
 
       </Grid>

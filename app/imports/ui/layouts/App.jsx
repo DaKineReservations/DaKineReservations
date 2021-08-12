@@ -25,7 +25,7 @@ class App extends React.Component {
         <div>
           <SideNavBar/>
           <Switch>
-            <Route exact path="/signin" component={Signin}/>
+            <Route exact path="/" component={Signin}/>
             <Route path="/signup" component={Signup}/>
             <Route path="/signout" component={Signout}/>
             <ProtectedRoute path="/Restaurants" component={ListRestaurants}/>

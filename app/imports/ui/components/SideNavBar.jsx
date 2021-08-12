@@ -100,7 +100,7 @@ class SideNavBar extends React.Component {
             <Menu.Item as={NavLink} activeClassName="active" exact to="/RestaurantHome" key='RestaurantHome'>
               <IconGroup>
                 <Icon name='list'/>
-                Restaurant Reservations
+                Current Reservations
               </IconGroup>
             </Menu.Item>
           ) : ''}

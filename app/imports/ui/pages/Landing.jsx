@@ -1,10 +1,11 @@
 import React from 'react';
-import { Grid, Image } from 'semantic-ui-react';
+import { Grid, Image, Card, CardContent, CardHeader, CardDescription } from 'semantic-ui-react';
 
 /** A simple static component to render some text for the landing page. */
 class Landing extends React.Component {
   render() {
     return (
+      
       <Grid id='landing-page' verticalAlign='middle' textAlign='center' container>
 
         <Grid.Column width={4}>
@@ -12,8 +13,78 @@ class Landing extends React.Component {
         </Grid.Column>
 
         <Grid.Column width={8}>
-          <h1>Welcome to this template</h1>
-          <p>Now get to work and modify this app!</p>
+          <Card>
+            <CardContent>
+              <CardHeader>Mai Taiʻs</CardHeader>
+              <CardDescription>
+                Live music, cheap beers, and tasty food!
+              </CardDescription>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent>
+              <CardHeader>Da Spot</CardHeader>
+              <CardDescription>
+                Live music, cheap beers, and tasty food!
+              </CardDescription>
+            </CardContent>
+          </Card>
+          
+          <Card>
+            <CardContent>
+              <CardHeader>Appetito</CardHeader>
+              <CardDescription>
+                Live music, cheap beers, and tasty food!
+              </CardDescription>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent>
+              <CardHeader>La Pina</CardHeader>
+              <CardDescription>
+                Live music, cheap beers, and tasty food!
+              </CardDescription>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent>
+              <CardHeader>Shore Fyre</CardHeader>
+              <CardDescription>
+                Live music, cheap beers, and tasty food!
+              </CardDescription>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent>
+              <CardHeader>Maui Brewing Co.</CardHeader>
+              <CardDescription>
+                Live music, cheap beers, and tasty food!
+              </CardDescription>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent>
+              <CardHeader>Deck</CardHeader>
+              <CardDescription>
+                Live music, cheap beers, and tasty food!
+              </CardDescription>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent>
+              <CardHeader>Basalt</CardHeader>
+              <CardDescription>
+                Live music, cheap beers, and tasty food!
+              </CardDescription>
+            </CardContent>
+          </Card>
+
         </Grid.Column>
 
       </Grid>

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import { withRouter, NavLink } from 'react-router-dom';
-import { Menu, Button, Icon, IconGroup, Sidebar, Label } from 'semantic-ui-react';
+import { Menu, Button, Icon, IconGroup, Sidebar } from 'semantic-ui-react';
 // import { Roles } from 'meteor/alanning:roles';
 // import 'react-pro-sidebar/dist/css/styles.css';
 import { Roles } from 'meteor/alanning:roles';

@@ -16,6 +16,8 @@ class Landing extends React.Component {
           <Card>
             <CardContent>
               <Image circular src="/images/dandakine.jpg"/>
+              <Button>Upload Image</Button>
+
 
               <GridRow>
                 <Header textAlign='left'>Name</Header>

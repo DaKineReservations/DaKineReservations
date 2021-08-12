@@ -1,17 +1,31 @@
 import React from 'react';
-import { Table } from 'semantic-ui-react';
+import { Card, Button } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 
 /** Renders a single row in the List Stuff (Admin) table. See pages/ListStuffAdmin.jsx. */
 class StuffItemAdmin extends React.Component {
   render() {
     return (
-      <Table.Row>
-        <Table.Cell>{this.props.stuff.name}</Table.Cell>
-        <Table.Cell>{this.props.stuff.quantity}</Table.Cell>
-        <Table.Cell>{this.props.stuff.condition}</Table.Cell>
-        <Table.Cell>{this.props.stuff.owner}</Table.Cell>
-      </Table.Row>
+    <Card fluid>
+      <Card.Content>
+        <Card.Header>
+          {this.props.stuff.name}
+        </Card.Header>
+        <Card.Meta>
+          Party of {this.props.stuff.quantity}
+          <Button floated='right'>
+          Edit Reservation
+          </Button>
+        </Card.Meta>
+        <Card.Description>
+        <strong>Start Time:</strong> {this.props.stuff.startTime} <br/>
+        <strong>End Time:</strong> {this.props.stuff.endTime}        
+        <Button floated='right'>
+          View Details
+        </Button>
+        </Card.Description>
+      </Card.Content>
+    </Card>
     );
   }
 }
@@ -21,9 +35,9 @@ StuffItemAdmin.propTypes = {
   stuff: PropTypes.shape({
     name: PropTypes.string,
     quantity: PropTypes.number,
-    condition: PropTypes.string,
+    endTime: PropTypes.string,
     _id: PropTypes.string,
-    owner: PropTypes.string,
+    startTime: PropTypes.string,
   }).isRequired,
 };
 

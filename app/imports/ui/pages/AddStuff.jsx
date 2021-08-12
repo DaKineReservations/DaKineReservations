@@ -13,7 +13,6 @@ const formSchema = new SimpleSchema({
   quantity: Number,
   condition: {
     type: String,
-    allowedValues: ['excellent', 'good', 'fair', 'poor'],
     defaultValue: 'good',
   },
 });

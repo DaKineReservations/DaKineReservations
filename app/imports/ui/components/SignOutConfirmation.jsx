@@ -77,7 +77,7 @@ function SignOutConfirmation() {
               No
           </Button>
           <Button
-            onClick={(e) => (swal('You Have Signed Out', '', 'info'), dispatch({
+            onClick={(e) => (swal('You Have Signed Out', '', 'success'), dispatch({
               event: e.type,
               name: 'onClick',
               type: 'LOG_OUT',

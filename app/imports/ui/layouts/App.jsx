@@ -16,6 +16,8 @@ import Signin from '../pages/Signin';
 import Signup from '../pages/Signup';
 import ListRestaurants from '../pages/ListRestaurants';
 import ProfilePage from '../pages/ProfilePage';
+import RestOptions from '../pages/RestOptions';
+import CreateReservation from '../pages/CreateReservation';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -29,6 +31,7 @@ class App extends React.Component {
             <Route exact path="/Signin" component={Signin}/>
             <Route path="/signup" component={Signup}/>
             <ProtectedRoute path="/Restaurants" component={ListRestaurants}/>
+            <ProtectedRoute path="/CreateReservation" component={CreateReservation}/>
             <ProtectedRoute path="/add" component={AddStuff}/>
             <ProtectedRoute path="/ProfilePage" component={ProfilePage}/>
             <ProtectedRoute path="/edit/:_id" component={EditStuff}/>

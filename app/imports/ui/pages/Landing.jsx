@@ -6,11 +6,29 @@ class Landing extends React.Component {
   render() {
     return (
       
-      <Grid id='landing-page' verticalAlign='middle' textAlign='center' container>
-
+      <Grid id='landing-page' verticalAlign='left' textAlign='center' container>
+<Card>
         <Grid.Column width={4}>
-          <Image size='small' verticalAlign='left' circular src="/images/meteor-logo.png"/>
+          <Image size='small' verticalAlign='middle' circular src="/images/meteor-logo.png"/>
+          <br></br>
+          <CardHeader><strong>Dan Dakine</strong></CardHeader>
+          <br></br>
+          <Button fluid>Home</Button>
+          <br></br>
+          <br></br>
+          <Button fluid>Restaurant</Button>
+          <br></br>
+          <br></br>
+          <Button fluid>Create Reservation</Button>
+          <br></br>
+          <br></br>
+          <Button fluid>My Reservations</Button>
+          <br></br>
+          <br></br>
+          <Button fluid color='red'>Sign Out</Button>
+          <br></br>
         </Grid.Column>
+        </Card>
 
         <Grid.Column width={8}>
           <Card>

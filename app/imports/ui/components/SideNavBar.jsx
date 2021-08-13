@@ -62,17 +62,7 @@ class SideNavBar extends React.Component {
         >
           <Button fluid style={{ zIndex: 2 }} icon color='grey' disabled={false} onClick={this.handleShowClick}>
             <Icon name='bars'/>
-          </Button> 
-
-          {!Roles.userIsInRole(Meteor.userId(), 'admin') ? (
-            <Menu.Item style={{ floated: 'left', width: '100%' }} key="Restaurants"
-            as={NavLink} exact to="/Restaurants" onClick={this.handleShowClick}>
-            <IconGroup>
-              <Icon name='food'/>
-              Restaurants
-            </IconGroup>
-          </Menu.Item>
-          ) : ''}
+          </Button>
 
           {!Roles.userIsInRole(Meteor.userId(), 'admin') ? (
             <Menu.Item style={{ floated: 'left', width: '100%' }} key="user"
@@ -82,7 +72,17 @@ class SideNavBar extends React.Component {
               Profile
             </IconGroup>
           </Menu.Item>   
-          ) : ''}    
+          ) : ''}
+
+          {!Roles.userIsInRole(Meteor.userId(), 'admin') ? (
+            <Menu.Item style={{ floated: 'left', width: '100%' }} key="Restaurants"
+            as={NavLink} exact to="/Restaurants" onClick={this.handleShowClick}>
+            <IconGroup>
+              <Icon name='food'/>
+              Restaurants
+            </IconGroup>
+          </Menu.Item>
+          ) : ''}              
 
           {!Roles.userIsInRole(Meteor.userId(), 'admin') ? (
             <Menu.Item style={{ floated: 'left', width: '100%' }} key="CreateReservation"
@@ -124,7 +124,7 @@ class SideNavBar extends React.Component {
             </Menu.Item>
           ) : ''}
 
-          <SignOutConfirmation id="navbar-sign-out" as={NavLink} exact to="/" style={{ padding: 0, margin: 0 }}/>
+          <SignOutConfirmation id="navbar-sign-out" as={NavLink} exact to="/signout" style={{ padding: 0, margin: 0 }}/>
         </Sidebar>
       </div>
     );

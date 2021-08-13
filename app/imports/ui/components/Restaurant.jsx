@@ -8,18 +8,18 @@ class Restaurant extends React.Component {
   render() {
     return (
       <Card centered color='green'>
-      <Image src={this.props.restaurant.image}/>
-      <Card.Content>
-        <Card.Header>{this.props.restaurant.firstName} </Card.Header>     
-        <Card.Description>{this.props.restaurant.description}</Card.Description>   
-      </Card.Content>
-      <Card.Content extra>
-      <a>
-        <Icon name='align justify' />
+        <Image src={this.props.restaurant.image}/>
+        <Card.Content>
+          <Card.Header>{this.props.restaurant.firstName} </Card.Header>
+          <Card.Description>{this.props.restaurant.description}</Card.Description>
+        </Card.Content>
+        <Card.Content extra>
+          <a>
+            <Icon name='align justify' />
         View This Restaurant
-      </a>
-      </Card.Content>
-    </Card>
+          </a>
+        </Card.Content>
+      </Card>
     );
   }
 }

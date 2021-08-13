@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Container, Header, Loader, Card } from 'semantic-ui-react';
+import { Container, Header, Loader, Card, Progress, Segment, Grid } from 'semantic-ui-react';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import Restaurant from '../components/Restaurant';
@@ -61,7 +61,14 @@ class ListRestaurants extends React.Component {
   renderPage() {
     return (
       <Container>
-        <Header as="h2" textAlign="center">Restaurants</Header>
+        <Progress percent={33} success>
+          <Grid columns='equal'>
+            <Grid.Column>Browse Restaurants</Grid.Column>
+            <Grid.Column>Create Reservation</Grid.Column>
+            <Grid.Column>Confirm Reservation</Grid.Column>
+          </Grid>
+         </Progress>
+        <Header as="h1" textAlign="center">Restaurants</Header>
         <Card.Group itemsPerRow={4}>
           {this.restaurants.map( (restaurant, index) => <Restaurant key={index} restaurant={restaurant} />)}
         </Card.Group>

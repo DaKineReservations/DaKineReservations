@@ -26,7 +26,7 @@ export default class Landing extends React.Component {
                 <div style={align}>
                   <Header inverted as="h3">Reservations for locals</Header>
                   <p>Ho brah you need one reservation?
-                    Get a table just for locals,
+                    Get one table just for locals,
                     fast kine action.</p>
                 </div>
               </Grid.Row>

@@ -65,7 +65,7 @@ class SideNavBar extends React.Component {
           </Button>
 
           <Menu.Item style={{ floated: 'left', width: '100%' }} key="user"
-            as={NavLink} exact to="/profile" onClick={this.handleShowClick}>
+            as={NavLink} exact to="/ProfilePage" onClick={this.handleShowClick}>
             <IconGroup>
               <Icon name='user'/>
               Profile

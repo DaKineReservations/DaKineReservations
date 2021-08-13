@@ -35,8 +35,13 @@ export default class Signin extends React.Component {
 
   // Render the signin form.
   render() {
-    const { from } = this.props.location.state || { from: { pathname: '/' } };
+    const { from } = this.props.location.state || { from: { pathname: '/Restaurants' } };
+    const { from2 } = this.props.location.state || { from2: { pathname: '/RestaurantHome' } };
     // if correct authentication, redirect to page instead of login screen
+    if (this.props.currentUser === 'admin') {
+      return <Redirect to= {from2}/>;
+    }
+
     if (this.state.redirectToReferer) {
       return <Redirect to={from}/>;
     }
@@ -95,4 +100,5 @@ export default class Signin extends React.Component {
 // Ensure that the React Router location object is available in case we need to redirect.
 Signin.propTypes = {
   location: PropTypes.object,
+  currentUser: PropTypes.string,
 };

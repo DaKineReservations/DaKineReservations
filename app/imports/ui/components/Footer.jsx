@@ -10,7 +10,7 @@ class Footer extends React.Component {
           <hr />
               Department of Information and Lady Sciences <br />
               University of Hawaii<br />
-              Honolulu, HI 96822 <br />
+              Honolulu, HI 96815 <br />
           <a href="http://ics-software-engineering.github.io/meteor-application-template-react">Template Home Page</a>
         </div>
       </footer>

@@ -64,40 +64,49 @@ class SideNavBar extends React.Component {
             <Icon name='bars'/>
           </Button>
 
-          <Menu.Item style={{ floated: 'left', width: '100%' }} key="user"
-            as={NavLink} exact to="/profile" onClick={this.handleShowClick}>
-            <IconGroup>
-              <Icon name='user'/>
+          {!Roles.userIsInRole(Meteor.userId(), 'admin') ? (
+            <Menu.Item style={{ floated: 'left', width: '100%' }} key="user"
+              as={NavLink} exact to="/ProfilePage" onClick={this.handleShowClick}>
+              <IconGroup>
+                <Icon name='user'/>
               Profile
-            </IconGroup>
-          </Menu.Item>
+              </IconGroup>
+            </Menu.Item>
+          ) : ''}
 
-          <Menu.Item style={{ floated: 'left', width: '100%' }} key="Restaurants"
-            as={NavLink} exact to="/Restaurants" onClick={this.handleShowClick}>
-            <IconGroup>
-              <Icon name='food'/>
+          {!Roles.userIsInRole(Meteor.userId(), 'admin') ? (
+            <Menu.Item style={{ floated: 'left', width: '100%' }} key="Restaurants"
+              as={NavLink} exact to="/Restaurants" onClick={this.handleShowClick}>
+              <IconGroup>
+                <Icon name='food'/>
               Restaurants
-            </IconGroup>
-          </Menu.Item>
+              </IconGroup>
+            </Menu.Item>
+          ) : ''}
 
-          <Menu.Item style={{ floated: 'left', width: '100%' }} key="CreateReservation"
-            as={NavLink} exact to="/CreateReservation" onClick={this.handleShowClick}>
-            <IconGroup>
-              <Icon name='edit outline'/>
+          {!Roles.userIsInRole(Meteor.userId(), 'admin') ? (
+            <Menu.Item style={{ floated: 'left', width: '100%' }} key="CreateReservation"
+              as={NavLink} exact to="/CreateReservation" onClick={this.handleShowClick}>
+              <IconGroup>
+                <Icon name='edit outline'/>
               Create Reservation
-            </IconGroup>
-          </Menu.Item>
+              </IconGroup>
+            </Menu.Item>
+          ) : ''}
 
-          <Menu.Item style={{ floated: 'left', width: '100%' }} key="MyRestaurantReservations"
-            as={NavLink} exact to="/MyRestaurantReservations" onClick={this.handleShowClick}>
-            <IconGroup>
-              <Icon name='tasks'/>
+          {!Roles.userIsInRole(Meteor.userId(), 'admin') ? (
+            <Menu.Item style={{ floated: 'left', width: '100%' }} key="MyRestaurantReservations"
+              as={NavLink} exact to="/MyRestaurantReservations" onClick={this.handleShowClick}>
+              <IconGroup>
+                <Icon name='tasks'/>
               Restaurant Reservations
-            </IconGroup>
-          </Menu.Item>
+              </IconGroup>
+            </Menu.Item>
+          ) : ''}
 
           {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
-            <Menu.Item as={NavLink} activeClassName="active" exact to="/RestaurantHome" key='RestaurantHome'>
+            <Menu.Item as={NavLink} activeClassName="active" exact to="/RestaurantHome"
+              key='RestaurantHome' onClick={this.handleShowClick}>
               <IconGroup>
                 <Icon name='list'/>
                 Current Reservations
@@ -106,7 +115,8 @@ class SideNavBar extends React.Component {
           ) : ''}
 
           {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
-            <Menu.Item as={NavLink} activeClassName="active" exact to="/RestOptions" key='RestaurantOptions'>
+            <Menu.Item as={NavLink} activeClassName="active" exact to="/RestaurantOptions"
+              key='RestaurantOptions' onClick={this.handleShowClick}>
               <IconGroup>
                 <Icon name='cogs'/>
                 Restaurant Options

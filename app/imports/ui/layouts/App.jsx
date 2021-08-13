@@ -7,16 +7,15 @@ import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
 // import NavBar from '../components/NavBar';
 import SideNavBar from '../components/SideNavBar';
 import Footer from '../components/Footer';
-// import Landing from '../pages/Landing';
+import Landing from '../pages/Landing';
 import ListStuffAdmin from '../pages/ListStuffAdmin';
 import AddStuff from '../pages/AddStuff';
 import EditStuff from '../pages/EditStuff';
 import NotFound from '../pages/NotFound';
 import Signin from '../pages/Signin';
 import Signup from '../pages/Signup';
-import Signout from '../pages/Signout';
 import ListRestaurants from '../pages/ListRestaurants';
-import RestOptions from '../pages/RestOptions';
+import ProfilePage from '../pages/ProfilePage';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -26,11 +25,12 @@ class App extends React.Component {
         <div>
           <SideNavBar/>
           <Switch>
-            <Route exact path="/" component={Signin}/>
+            <Route exact path="/" component={Landing}/>
+            <Route exact path="/Signin" component={Signin}/>
             <Route path="/signup" component={Signup}/>
-            <Route path="/signout" component={Signout}/>
             <ProtectedRoute path="/Restaurants" component={ListRestaurants}/>
             <ProtectedRoute path="/add" component={AddStuff}/>
+            <ProtectedRoute path="/ProfilePage" component={ProfilePage}/>
             <ProtectedRoute path="/edit/:_id" component={EditStuff}/>
             <AdminProtectedRoute path="/RestaurantHome" component={ListStuffAdmin}/>
             <AdminProtectedRoute path="/RestOptions" component={RestOptions}/>

@@ -106,7 +106,7 @@ class SideNavBar extends React.Component {
           ) : ''}
 
           {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
-            <Menu.Item as={NavLink} activeClassName="active" exact to="/RestaurantOptions" key='RestaurantOptions'>
+            <Menu.Item as={NavLink} activeClassName="active" exact to="/RestOptions" key='RestaurantOptions'>
               <IconGroup>
                 <Icon name='cogs'/>
                 Restaurant Options

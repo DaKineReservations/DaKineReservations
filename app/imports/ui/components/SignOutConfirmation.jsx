@@ -77,14 +77,14 @@ function SignOutConfirmation() {
               No
           </Button>
           <Button
-            onClick={(e) => dispatch({
+            onClick={(e) => (swal('You Have Signed Out', '', 'info'), dispatch({
               event: e.type,
               name: 'onClick',
               type: 'LOG_OUT',
-            })
+            }))
             }
             positive
-            as={NavLink} exact to="/signout">
+            as={NavLink} exact to="/">
               Yes
           </Button>
         </Modal.Actions>

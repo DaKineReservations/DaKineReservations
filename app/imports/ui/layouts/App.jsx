@@ -14,7 +14,6 @@ import EditStuff from '../pages/EditStuff';
 import NotFound from '../pages/NotFound';
 import Signin from '../pages/Signin';
 import Signup from '../pages/Signup';
-import Signout from '../pages/Signout';
 import ListRestaurants from '../pages/ListRestaurants';
 import ProfilePage from '../pages/ProfilePage';
 
@@ -29,7 +28,6 @@ class App extends React.Component {
             <Route exact path="/" component={Landing}/>
             <Route exact path="/Signin" component={Signin}/>
             <Route path="/signup" component={Signup}/>
-            <Route path="/signout" component={Signout}/>
             <ProtectedRoute path="/Restaurants" component={ListRestaurants}/>
             <ProtectedRoute path="/add" component={AddStuff}/>
             <ProtectedRoute path="/ProfilePage" component={ProfilePage}/>

@@ -99,7 +99,7 @@ class SideNavBar extends React.Component {
               as={NavLink} exact to="/MyRestaurantReservations" onClick={this.handleShowClick}>
               <IconGroup>
                 <Icon name='tasks'/>
-              Restaurant Reservations
+              My Restaurant Reservations
               </IconGroup>
             </Menu.Item>
           ) : ''}

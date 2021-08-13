@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 class StuffItemAdmin extends React.Component {
   render() {
     return (
-    <Card fluid>
+    <Card fluid color='green'>
       <Card.Content>
         <Card.Header>
           {this.props.stuff.name}

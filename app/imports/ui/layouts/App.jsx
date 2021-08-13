@@ -18,6 +18,7 @@ import ListRestaurants from '../pages/ListRestaurants';
 import ProfilePage from '../pages/ProfilePage';
 import RestOptions from '../pages/RestOptions';
 import CreateReservation from '../pages/CreateReservation';
+import MyRestaurantReservations from '../pages/MyRestaurantReservations';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -32,6 +33,7 @@ class App extends React.Component {
             <Route path="/signup" component={Signup}/>
             <ProtectedRoute path="/Restaurants" component={ListRestaurants}/>
             <ProtectedRoute path="/CreateReservation" component={CreateReservation}/>
+            <ProtectedRoute path="/MyRestaurantReservations" component={MyRestaurantReservations}/>
             <ProtectedRoute path="/add" component={AddStuff}/>
             <ProtectedRoute path="/ProfilePage" component={ProfilePage}/>
             <ProtectedRoute path="/edit/:_id" component={EditStuff}/>

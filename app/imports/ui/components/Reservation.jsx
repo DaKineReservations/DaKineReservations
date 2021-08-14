@@ -3,10 +3,10 @@ import { Card, Button } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 
 /** Renders a single row in the List Stuff (Admin) table. See pages/ListStuffAdmin.jsx. */
-class StuffItemAdmin extends React.Component {
+class Reservation extends React.Component {
   render() {
     return (
-    <Card fluid>
+    <Card fluid color='green'>
       <Card.Content>
         <Card.Header>
           {this.props.stuff.name}
@@ -31,7 +31,7 @@ class StuffItemAdmin extends React.Component {
 }
 
 // Require a document to be passed to this component.
-StuffItemAdmin.propTypes = {
+Reservation.propTypes = {
   stuff: PropTypes.shape({
     name: PropTypes.string,
     quantity: PropTypes.number,
@@ -41,4 +41,4 @@ StuffItemAdmin.propTypes = {
   }).isRequired,
 };
 
-export default StuffItemAdmin;
+export default Reservation;

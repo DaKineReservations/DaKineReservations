@@ -4,10 +4,10 @@ import { Container, Card, Header, Loader } from 'semantic-ui-react';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import { Stuffs } from '../../api/stuff/Stuff';
-import StuffItemAdmin from '../components/StuffItemAdmin';
+import Reservation from '../components/Reservation';
 
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
-class ListStuffAdmin extends React.Component {
+class RestaurantHome extends React.Component {
 
   // If the subscription(s) have been received, render the page, otherwise show a loading icon.
   render() {
@@ -20,7 +20,7 @@ class ListStuffAdmin extends React.Component {
       <Container>
         <Header as="h2" textAlign="center">Reservations</Header>
         <Card.Group>
-        {this.props.stuffs.map((stuff) => <StuffItemAdmin key={stuff._id} stuff={stuff} />)}
+        {this.props.stuffs.map((stuff) => <Reservation key={stuff._id} stuff={stuff} />)}
         </Card.Group>
       </Container>
     );
@@ -28,7 +28,7 @@ class ListStuffAdmin extends React.Component {
 }
 
 // Require an array of Stuff documents in the props.
-ListStuffAdmin.propTypes = {
+RestaurantHome.propTypes = {
   stuffs: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
 };
@@ -45,4 +45,4 @@ export default withTracker(() => {
     stuffs,
     ready,
   };
-})(ListStuffAdmin);
+})(RestaurantHome);

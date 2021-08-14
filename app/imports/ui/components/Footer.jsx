@@ -10,7 +10,7 @@ class Footer extends React.Component {
           <hr />
               <strong>Dakine Reservations</strong><br />
               Contact Us<br />
-              <a href="http://ics-software-engineering.github.io/meteor-application-template-react">GitHub</a><br />
+              <a href="https://github.com/DaKineReservations/DaKineReservations">GitHub</a><br />
               About Dakine Reservations<br />
           
         </div>

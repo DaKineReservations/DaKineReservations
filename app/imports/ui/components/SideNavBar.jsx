@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import { withRouter, NavLink } from 'react-router-dom';
-import { Menu, Button, Icon, IconGroup, Sidebar } from 'semantic-ui-react';
+import { Menu, Button, Icon, IconGroup, Sidebar, Popup, PopupContent } from 'semantic-ui-react';
 // import { Roles } from 'meteor/alanning:roles';
 // import 'react-pro-sidebar/dist/css/styles.css';
 import { Roles } from 'meteor/alanning:roles';
@@ -65,63 +65,89 @@ class SideNavBar extends React.Component {
           </Button>
 
           {!Roles.userIsInRole(Meteor.userId(), 'admin') ? (
-            <Menu.Item style={{ floated: 'left', width: '100%' }} key="user"
+            <Popup trigger={
+              <Menu.Item style={{ floated: 'left', width: '100%' }} key="user"
               as={NavLink} exact to="/ProfilePage" onClick={this.handleShowClick}>
               <IconGroup>
                 <Icon name='user'/>
               Profile
               </IconGroup>
             </Menu.Item>
+            }>
+              <PopupContent>View and edit your public profile</PopupContent>                
+            </Popup>
           ) : ''}
 
           {!Roles.userIsInRole(Meteor.userId(), 'admin') ? (
-            <Menu.Item style={{ floated: 'left', width: '100%' }} key="Restaurants"
+            <Popup trigger={
+              <Menu.Item style={{ floated: 'left', width: '100%' }} key="Restaurants"
               as={NavLink} exact to="/Restaurants" onClick={this.handleShowClick}>
               <IconGroup>
                 <Icon name='food'/>
               Restaurants
               </IconGroup>
             </Menu.Item>
+            }>
+              <PopupContent>Browse available restaurants</PopupContent>                
+            </Popup>            
           ) : ''}
 
           {!Roles.userIsInRole(Meteor.userId(), 'admin') ? (
-            <Menu.Item style={{ floated: 'left', width: '100%' }} key="CreateReservation"
-              as={NavLink} exact to="/CreateReservation" onClick={this.handleShowClick}>
-              <IconGroup>
-                <Icon name='edit outline'/>
-              Create Reservation
-              </IconGroup>
-            </Menu.Item>
+            <Popup trigger={
+              <Menu.Item style={{ floated: 'left', width: '100%' }} key="CreateReservation"
+                as={NavLink} exact to="/CreateReservation" onClick={this.handleShowClick}>
+                <IconGroup>
+                  <Icon name='edit outline'/>
+                Create Reservation
+                </IconGroup>
+              </Menu.Item>
+            }>
+              <PopupContent>Create a restaurant reservation</PopupContent>                
+            </Popup>
           ) : ''}
 
           {!Roles.userIsInRole(Meteor.userId(), 'admin') ? (
-            <Menu.Item style={{ floated: 'left', width: '100%' }} key="MyRestaurantReservations"
-              as={NavLink} exact to="/MyRestaurantReservations" onClick={this.handleShowClick}>
-              <IconGroup>
-                <Icon name='tasks'/>
-              My Restaurant Reservations
-              </IconGroup>
-            </Menu.Item>
+            <Popup trigger={
+              <Menu.Item style={{ floated: 'left', width: '100%' }} key="MyRestaurantReservations"
+                as={NavLink} exact to="/MyRestaurantReservations" onClick={this.handleShowClick}>
+                <IconGroup>
+                  <Icon name='tasks'/>
+                My Restaurant Reservations
+                </IconGroup>
+              </Menu.Item>
+            }>
+              <PopupContent>View and edit your created reservations</PopupContent>                
+            </Popup>
           ) : ''}
 
           {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
-            <Menu.Item as={NavLink} activeClassName="active" exact to="/RestaurantHome"
-              key='RestaurantHome' onClick={this.handleShowClick}>
-              <IconGroup>
-                <Icon name='list'/>
-                Current Reservations
-              </IconGroup>
-            </Menu.Item>
+            <Popup trigger={
+              <Menu.Item as={NavLink} activeClassName="active" exact to="/RestaurantHome"
+                key='RestaurantHome' onClick={this.handleShowClick}>
+                <IconGroup>
+                  <Icon name='list'/>
+                  Current Reservations
+                </IconGroup>
+              </Menu.Item>
+            }>
+              <PopupContent>View and edit upcoming customer reservations</PopupContent>                
+            </Popup>
           ) : ''}
 
           {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
-            <Menu.Item as={NavLink} activeClassName="active" exact to="/RestOptions"
-              key='RestaurantOptions' onClick={this.handleShowClick}>
-              <IconGroup>
-                <Icon name='cogs'/>
-                Restaurant Options
-              </IconGroup>
-            </Menu.Item>
+            <Popup trigger={
+              <Menu.Item as={NavLink} activeClassName="active" exact to="/RestOptions"
+                key='RestaurantOptions' onClick={this.handleShowClick}>
+                <IconGroup>
+                  <Icon name='cogs'/>
+                  Restaurant Options
+                </IconGroup>
+              </Menu.Item>
+            }>
+              <PopupContent>
+                View and Edit your restaurant's public profile, menu, and seating allocation
+                </PopupContent>                
+            </Popup>
           ) : ''}
 
           <SignOutConfirmation id="navbar-sign-out" as={NavLink} exact to="/signout" style={{ padding: 0, margin: 0 }}/>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Popup, Grid, Image, Card, CardContent, CardHeader, CardDescription, GridRow, Header, Input, Button, CardMeta, GridColumn, PopupContent } from 'semantic-ui-react';
+import { Popup, Grid, Image, Card, CardContent, CardHeader, CardDescription, GridRow, Button, CardMeta, GridColumn, PopupContent } from 'semantic-ui-react';
 
 /** A simple static component to render some text for the landing page. */
 class Landing extends React.Component {
@@ -23,13 +23,11 @@ class Landing extends React.Component {
      
               <CardMeta>Located steps away from world famous Ala Moana Beach Park</CardMeta>
                 <br></br>
-              <Popup
-              trigger={
+
+              <Popup trigger={
                 <Button size='tiny' color='blue'>Edit Name/Description</Button>
-              }
-              >
-                <PopupContent>Pop UP Test</PopupContent>
-                
+              }>
+                <PopupContent>Pop UP Test</PopupContent>                
               </Popup>
 
               
@@ -42,11 +40,11 @@ class Landing extends React.Component {
               <GridRow >
                 
                 <GridColumn>
-                  <Button>View/Change Restaurant Menu</Button>
+                  <Button style={{backgroundColor:'#00ff00'}}>View/Change Restaurant Menu</Button>
                 </GridColumn>
 
                 <GridColumn>
-                  <Button>Update Seating Allocation</Button>
+                  <Button style={{backgroundColor:'#00ff00'}}>Update Seating Allocation</Button>
                 </GridColumn>
                 
               </GridRow>

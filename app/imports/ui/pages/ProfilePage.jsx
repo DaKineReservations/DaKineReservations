@@ -11,19 +11,21 @@ class Landing extends React.Component {
         <Grid.Column width={8}>
           <Card fluid>
             <CardContent>
+            <Header textAlign='middle'>Dan Dakine</Header>
               <Image circular src="/images/dandakine.jpg"/>
-              <Button>Upload Image</Button>
+             
+              <Button style={{backgroundColor:'#61bd94'}}>Upload Image</Button>
 
 
               <GridRow>
                 <Header textAlign='left'>Name</Header>
-                <Input fluid verticalAlign='left' foucs placeholder='name'/> <Button>Submit</Button>
+                <Input fluid verticalAlign='left' foucs placeholder='name'/> <Button style={{backgroundColor:'#61bd94'}}>Submit</Button>
 
               </GridRow>
              
               <GridRow>
                 <Header textAlign='left'>Number</Header>
-                <Input fluid verticalAlign='left' foucs placeholder='(808)555-5555'/> <Button>Submit</Button>
+                <Input fluid verticalAlign='left' foucs placeholder='(808)555-5555'/> <Button style={{backgroundColor:'#61bd94'}}>Submit</Button>
               </GridRow>
              
               <GridRow>
@@ -32,7 +34,7 @@ class Landing extends React.Component {
                 <br></br>
                 <Input fluid verticalAlign='left' foucs placeholder='new password'/>
                 <br></br>
-                <Input fluid verticalAlign='left' foucs placeholder='confirm password'/> <Button>Submit</Button>
+                <Input fluid verticalAlign='left' foucs placeholder='confirm password'/> <Button style={{backgroundColor:'#61bd94'}}>Submit</Button>
               </GridRow>
 
             </CardContent>

@@ -15,7 +15,7 @@ class Landing extends React.Component {
               <br></br>
               <br></br>
 
-              <Button color='blue'>Edit Logo</Button>
+              <Button style={{backgroundColor:'#61bd94'}}>Change Image</Button>
               <br></br>
               <br></br>
               <CardHeader>Mai Tai's Bar And Grill</CardHeader>
@@ -25,10 +25,10 @@ class Landing extends React.Component {
                 <br></br>
               <Popup
               trigger={
-                <Button size='tiny' color='blue'>Edit Name/Description</Button>
+                <Button style={{backgroundColor:'#61bd94'}}>Edit Name and Description</Button>
               }
               >
-                <PopupContent>Pop UP Test</PopupContent>
+                <PopupContent>Change your name and restaraunt bio</PopupContent>
                 
               </Popup>
 
@@ -37,17 +37,16 @@ class Landing extends React.Component {
               <br></br>
               <CardDescription><strong>Hours:</strong> 12:00 PM to 1:00 AM</CardDescription>
               <br></br>
-              <Button size='tiny' color='blue'>Edit Hours of Operation</Button>
-
+              <Button style={{backgroundColor:'#61bd94'}}>Edit Hours of Operation</Button>
+<br></br>
+<br></br>
               <GridRow >
                 
                 <GridColumn>
-                  <Button>View/Change Restaurant Menu</Button>
+                <Button style={{backgroundColor:'#61bd94'}}>Change Seating</Button>
                 </GridColumn>
 
-                <GridColumn>
-                  <Button>Update Seating Allocation</Button>
-                </GridColumn>
+               
                 
               </GridRow>
 

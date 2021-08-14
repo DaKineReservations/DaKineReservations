@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import { withRouter, NavLink } from 'react-router-dom';
-import { Menu, Button, Icon, IconGroup, Sidebar, Popup, PopupContent } from 'semantic-ui-react';
+import { Menu, Button, Icon, IconGroup, Sidebar, Popup, PopupContent, Header, Image } from 'semantic-ui-react';
 // import { Roles } from 'meteor/alanning:roles';
 // import 'react-pro-sidebar/dist/css/styles.css';
 import { Roles } from 'meteor/alanning:roles';
@@ -65,31 +65,45 @@ class SideNavBar extends React.Component {
           </Button>
 
           {!Roles.userIsInRole(Meteor.userId(), 'admin') ? (
+            <div>
+              <Image centered src = "/images/circle-cropped.png"></Image>
+              <Header>Dan Dakine</Header>
+            </div>
+          ) : ''}
+
+          {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
+            <div>
+              <Image centered src = "/images/MaiTaisCircle.png"></Image>
+              <Header>Mai Tai</Header>
+            </div>
+          ) : ''}
+
+          {!Roles.userIsInRole(Meteor.userId(), 'admin') ? (
             <Popup trigger={
               <Menu.Item style={{ floated: 'left', width: '100%' }} key="user"
-              as={NavLink} exact to="/ProfilePage" onClick={this.handleShowClick}>
-              <IconGroup>
-                <Icon name='user'/>
+                as={NavLink} exact to="/ProfilePage" onClick={this.handleShowClick}>
+                <IconGroup>
+                  <Icon name='user'/>
               Profile
-              </IconGroup>
-            </Menu.Item>
+                </IconGroup>
+              </Menu.Item>
             }>
-              <PopupContent>View and edit your public profile</PopupContent>                
+              <PopupContent>View and edit your public profile</PopupContent>
             </Popup>
           ) : ''}
 
           {!Roles.userIsInRole(Meteor.userId(), 'admin') ? (
             <Popup trigger={
               <Menu.Item style={{ floated: 'left', width: '100%' }} key="Restaurants"
-              as={NavLink} exact to="/Restaurants" onClick={this.handleShowClick}>
-              <IconGroup>
-                <Icon name='food'/>
+                as={NavLink} exact to="/Restaurants" onClick={this.handleShowClick}>
+                <IconGroup>
+                  <Icon name='food'/>
               Restaurants
-              </IconGroup>
-            </Menu.Item>
+                </IconGroup>
+              </Menu.Item>
             }>
-              <PopupContent>Browse available restaurants</PopupContent>                
-            </Popup>            
+              <PopupContent>Browse available restaurants</PopupContent>
+            </Popup>
           ) : ''}
 
           {!Roles.userIsInRole(Meteor.userId(), 'admin') ? (
@@ -102,7 +116,7 @@ class SideNavBar extends React.Component {
                 </IconGroup>
               </Menu.Item>
             }>
-              <PopupContent>Create a restaurant reservation</PopupContent>                
+              <PopupContent>Create a restaurant reservation</PopupContent>
             </Popup>
           ) : ''}
 
@@ -116,7 +130,7 @@ class SideNavBar extends React.Component {
                 </IconGroup>
               </Menu.Item>
             }>
-              <PopupContent>View and edit your created reservations</PopupContent>                
+              <PopupContent>View and edit your created reservations</PopupContent>
             </Popup>
           ) : ''}
 
@@ -130,7 +144,7 @@ class SideNavBar extends React.Component {
                 </IconGroup>
               </Menu.Item>
             }>
-              <PopupContent>View and edit upcoming customer reservations</PopupContent>                
+              <PopupContent>View and edit upcoming customer reservations</PopupContent>
             </Popup>
           ) : ''}
 
@@ -146,7 +160,7 @@ class SideNavBar extends React.Component {
             }>
               <PopupContent>
                 View and Edit your restaurant's public profile, menu, and seating allocation
-                </PopupContent>                
+              </PopupContent>
             </Popup>
           ) : ''}
 

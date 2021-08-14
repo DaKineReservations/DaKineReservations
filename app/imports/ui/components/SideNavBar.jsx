@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import { withRouter, NavLink } from 'react-router-dom';
-import { Menu, Button, Icon, IconGroup, Sidebar } from 'semantic-ui-react';
+import { Menu, Button, Icon, IconGroup, Sidebar, Image, Header } from 'semantic-ui-react';
 // import { Roles } from 'meteor/alanning:roles';
 // import 'react-pro-sidebar/dist/css/styles.css';
 import { Roles } from 'meteor/alanning:roles';
@@ -63,6 +63,20 @@ class SideNavBar extends React.Component {
           <Button fluid style={{ zIndex: 2 }} icon color='grey' disabled={false} onClick={this.handleShowClick}>
             <Icon name='bars'/>
           </Button>
+
+          {!Roles.userIsInRole(Meteor.userId(), 'admin') ? (
+            <div>
+              <Image centered src = "/images/circle-cropped.png"></Image>
+              <Header>Dan Dakine</Header>
+            </div>
+          ) : ''}
+
+          {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
+            <div>
+              <Image centered src = "/images/MaiTaisCircle.png"></Image>
+              <Header>Mai Tai</Header>
+            </div>
+          ) : ''}
 
           {!Roles.userIsInRole(Meteor.userId(), 'admin') ? (
             <Menu.Item style={{ floated: 'left', width: '100%' }} key="user"

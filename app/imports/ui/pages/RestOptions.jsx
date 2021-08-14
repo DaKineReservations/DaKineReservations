@@ -1,5 +1,5 @@
 import React from 'react';
-import { Popup, Grid, Image, Card, CardContent, CardHeader, CardDescription, GridRow, Header, Input, Button, CardMeta, GridColumn, PopupContent } from 'semantic-ui-react';
+import { Popup, Grid, Image, Card, CardContent, CardHeader, CardDescription, GridRow, Button, CardMeta, GridColumn, PopupContent } from 'semantic-ui-react';
 
 /** A simple static component to render some text for the landing page. */
 class Landing extends React.Component {
@@ -23,14 +23,13 @@ class Landing extends React.Component {
      
               <CardMeta>Located steps away from world famous Ala Moana Beach Park</CardMeta>
                 <br></br>
-              <Popup
-              trigger={
+
+        
+           
                 <Button style={{backgroundColor:'#61bd94'}}>Edit Name and Description</Button>
-              }
-              >
-                <PopupContent>Change your name and restaraunt bio</PopupContent>
+            
                 
-              </Popup>
+
 
               
               <br></br>
@@ -47,6 +46,7 @@ class Landing extends React.Component {
                 </GridColumn>
 
                
+
                 
               </GridRow>
 
